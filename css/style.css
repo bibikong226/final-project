@@ -164,10 +164,17 @@ nav ul {
   
   .work-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 6.5rem;  /* 세로 간격만 넓힘 */
-    column-gap: 4rem;  /* 가로 간격은 유지 */
+    grid-template-columns: 1fr;  /* 기본: 1열 */
+    gap: 4rem 6.5rem;  /* 가로, 세로 간격 */
 }
+
+/* 768px 이상: 2열 */
+@media (min-width: 768px) {
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2열 */
+    }
+}
+
 
 /* ====== Explore Section ====== */
 .explore-section {
@@ -190,9 +197,9 @@ nav ul {
 
 .explore-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3열 고정 */
+    grid-template-columns: repeat(3, 1fr);  
     gap: 1rem;
-    justify-items: center;  /* 🔥 각 카드 자체를 가운데 정렬 */
+    justify-items: center;  
   }
   
   .explore-card {
@@ -200,7 +207,7 @@ nav ul {
     border-radius: 12px;
     position: relative;
     width: 100%;
-    height: 250px;  /* 기본 높이 */
+    height: 250px; 
   }
   
   .explore-card img {
@@ -215,9 +222,9 @@ nav ul {
     cursor: pointer;
   }
   
-  /* 🔥 마지막 두 개 카드 높이 줄이기 */
+
   .explore-card:nth-last-child(-n+2) {
-    height: 400px;  /* 조금 더 낮게 */
+    height: 400px;  
   }
   
   
@@ -373,11 +380,6 @@ footer p {
     }
   }
   
-  @media (min-width: 1200px) {
-    .work-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
   
   .work-card {
     display: flex;
