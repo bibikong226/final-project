@@ -162,19 +162,18 @@ nav ul {
     margin-bottom: 3rem;
   }
   
-  .work-grid {
+ /* ====== Work Section ====== */
+.work-grid {
     display: grid;
-    grid-template-columns: 1fr;  /* 기본: 1열 */
-    gap: 4rem 6.5rem;  /* 가로, 세로 간격 */
+    grid-template-columns: 1fr;  /* 기본 모바일: 1열 */
+    gap: 6.5rem 4rem;
+    width: 100%;
 }
-
-/* 768px 이상: 2열 */
 @media (min-width: 768px) {
     .work-grid {
-        grid-template-columns: repeat(2, 1fr);  /* 2열 */
+        grid-template-columns: repeat(2, 1fr);  /* 태블릿 이상: 2열 */
     }
 }
-
 
 /* ====== Explore Section ====== */
 .explore-section {
@@ -195,12 +194,18 @@ nav ul {
     font-size: 1.5rem;
 }
 
+/* ====== Explore Section ====== */
 .explore-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  
+    grid-template-columns: 1fr;  /* 기본 모바일: 1열 */
     gap: 1rem;
-    justify-items: center;  
-  }
+    justify-items: center;
+}
+@media (min-width: 768px) {
+    .explore-grid {
+        grid-template-columns: repeat(3, 1fr);  /* 태블릿 이상: 3열 */
+    }
+}
   
   .explore-card {
     overflow: hidden;
@@ -224,7 +229,7 @@ nav ul {
   
 
   .explore-card:nth-last-child(-n+2) {
-    height: 400px;  
+    height: 500px;  
   }
   
   
@@ -353,7 +358,6 @@ footer p {
   
   .work-card, .hobby-card {
     flex: 1 1 250px;  /* 카드 크기 일정하게 */
-    max-width: 300px;
     text-align: left;
   }
   
@@ -363,6 +367,11 @@ footer p {
     border-radius: 16px;
   }
   
+  .work-card {
+    min-width: 250px; /* 최소 크기 보장 */
+    width: 100%;      /* 그리드 셀을 꽉 채움 */
+}
+
   /* 반응형 */
   @media (min-width: 768px) {
     .about-grid {
@@ -433,14 +442,14 @@ footer p {
   /* ====== Responsive Header ====== */
   @media (min-width: 768px) {
     header {
-      flex-direction: row;
-      justify-content: center;  /* ✅ 바꿔! */
-      align-items: center;
-      padding: 1.5rem 2rem;
-      margin-left: 6rem;
-      margin-right: 6rem;
-      gap: 7rem;
+        flex-direction: row;  /* 태블릿 이상: 왼-오 */
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
     }
+}
   
     .logo {
       width: 60px;
@@ -493,5 +502,4 @@ footer p {
     .logo-row img {
       width: 65px;
     }
-  }
-  
+
