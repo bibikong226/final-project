@@ -42,4 +42,13 @@ const observer = new IntersectionObserver((entries) => {
   document.querySelectorAll('.about-section').forEach(section => {
     observer.observe(section);
   });
-  
+
+const items = document.querySelectorAll('.timeline-item');
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+items.forEach(item => timelineObserver.observe(item));
