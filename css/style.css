@@ -1,7 +1,7 @@
 /* ====== Global Styles ====== */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #000000 0%, #1a1a1a 50%, #5c5c5c 80%, #a0a0a0 100%);
+  background: black;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
