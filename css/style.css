@@ -36,7 +36,7 @@ nav ul {
 }
 
 .illustration img {
-  width: 150px;
+  width:30%;
 }
 
 .text-column h1 {
@@ -90,7 +90,7 @@ nav ul {
 
   
   .illustration img {
-    width: 150px;
+    width: 30%;
   }
   
   .text-column h1 {
@@ -890,3 +890,4 @@ html, body {
 .skip-link:focus {
   top: 10px;
 }
+
